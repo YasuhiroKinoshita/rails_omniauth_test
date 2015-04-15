@@ -1,5 +1,10 @@
 TwitterSample::Application.routes.draw do
+  root 'home#index'
   get "home/index"
+  get '/auth/:provider/callback', :to => 'sessions#callback'
+  post '/auth/:provider/callback', :to => 'sessions#callback'
+  get "/logout" => 'sessions#destroy', :as => :logout
+
   get "static_pages/home"
   get "static_pages/help"
   # The priority is based upon order of creation: first created -> highest priority.
