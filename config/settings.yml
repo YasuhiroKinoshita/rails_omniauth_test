@@ -1,0 +1,13 @@
+defalts: &defaults
+
+development:
+  <<: *defaults
+  twitter:
+    consumer_key: hoge
+    consumer_secret: hoge
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
